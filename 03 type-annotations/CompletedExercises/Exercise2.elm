@@ -5,8 +5,8 @@ import Html
 
 type alias Item =
     { name : String
-    , freeQty : Int
     , qty : Int
+    , freeQty : Int
     }
 
 
@@ -28,6 +28,6 @@ free minQty freeQty item =
 
 main : Html.Html msg
 main =
-    List.map ((free 10 3) >> (free 5 1)) cart
+    List.map (free 10 3 >> free 5 1) cart
         |> toString
         |> Html.text
